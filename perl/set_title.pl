@@ -1,4 +1,4 @@
-#!perl
+#!/usr/bin/perl
 #
 # Set xterm window title
 
