@@ -1,3 +1,5 @@
+# A naive implementation of the Fibonacci function:
+
 $c = 0;
 sub fib {
   my $n = shift;
