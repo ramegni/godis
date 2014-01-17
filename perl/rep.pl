@@ -1,4 +1,4 @@
-#!/usr/atria/bin/Perl
+#!/usr/bin/perl
 
 # Repeat command and print if output changes.
 # Default delay is 10 seconds unless given by -d flag.
