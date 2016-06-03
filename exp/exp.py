@@ -66,13 +66,14 @@ class Exp():
                     r = '(' + r + ')'
             return "%s%s%s" % (l, self.op, r)
 
-e1 = Exp('x')
-e2 = Exp(5)
-e3 = e1 + e2
-e4 = e1 * e3
-e5 = e3 - e4
-print("e1 = %s" % e1)
-print("e2 = %s" % e2)
-print("e3 = %s" % e3)
-print("e4 = %s" % e4)
-print("e5 = %s" % e5)
+if __name__ == '__main__':
+    e1 = Exp('x')
+    e2 = Exp(5)
+    e3 = e1 + e2
+    e4 = e1 * e3
+    e5 = e3 - e4
+    print("e1 = %s" % e1)
+    print("e2 = %s" % e2)
+    print("e3 = %s" % e3)
+    print("e4 = %s" % e4)
+    print("e5 = %s" % e5)
