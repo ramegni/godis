@@ -41,7 +41,7 @@ def eval_RPN(li):
 print sys.argv
 
 if len(sys.argv) != 6:
-     print 'Usage: fyra_nummer.py summa t1 t2 t3 t4'
+     print 'Usage: fyra_nummer.py t1 t2 t3 t4 summa'
      exit(1)
 
 result = int(sys.argv[5])
