@@ -16,12 +16,12 @@ sub error_pause
 sub ia_encrypt
 {
   ($infile, $outfile) = @_;
-  
+
   open IN_FILE, $infile;
   open OUT_FILE, ">$outfile";
   binmode IN_FILE;
   binmode OUT_FILE;
-  
+
   $index = 0;
 
   while (defined ($c = getc(IN_FILE))) {
@@ -33,7 +33,7 @@ sub ia_encrypt
     # Put in newlines to beutify encrypted file
     print OUT_FILE "\n" if ($index % 32 == 0);
   }
-  
+
   close IN_FILE;
   close OUT_FILE;
 }
@@ -41,12 +41,12 @@ sub ia_encrypt
 sub ia_decrypt
 {
   ($infile, $outfile) = @_;
-  
+
   open IN_FILE, $infile;
   open OUT_FILE, ">$outfile";
   binmode IN_FILE;
   binmode OUT_FILE;
-  
+
   $index = 0;
   while (defined ($c = getc(IN_FILE))) {
     # Skip newlines
@@ -57,12 +57,12 @@ sub ia_decrypt
     print OUT_FILE chr($x);
     $index++;
   }
-  
+
   close IN_FILE;
   close OUT_FILE;
 }
 
- 
+
 if (@ARGV != 1) {
   error_pause "Usage: crypt.pl <file name>";
 }
