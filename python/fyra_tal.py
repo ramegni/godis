@@ -21,6 +21,9 @@ func_dict = {
     '/' : float.__div__,
     }
 
+def round1(x):
+    return(int(x*100000+.5)/100000.0)
+
 def eval_RPN(li):
     l = li[:]
     s = []
@@ -73,8 +76,8 @@ for (a,b,c,d) in itertools.permutations(t):
                 #except TypeError:
                 #    r = -1
                 #print 'r = ', r
-                if r == result:
-                    print '((%d%s%d)%s%d)%s%d = %d' % (a,i,b,j,c,k,d,r)
+                if round1(r) == result:
+                    print '((%d%s%d)%s%d)%s%d = %d' % (a,i,b,j,c,k,d,result)
 
     # Pattern  ab?cd?? = (a?b)?(c?d)
     for i in funcs:
@@ -86,8 +89,8 @@ for (a,b,c,d) in itertools.permutations(t):
                     r = 0
                 except TypeError:
                     r = -1
-                if r == result:
-                    print '(%d%s%d)%s(%d%s%d) = %d' % (a,i,b,j,c,k,d,r)
+                if round1(r) == result:
+                    print '(%d%s%d)%s(%d%s%d) = %d' % (a,i,b,j,c,k,d,result)
 
     # Pattern  abc?d?? = a?((b?c)?d)
     for i in funcs:
@@ -99,8 +102,8 @@ for (a,b,c,d) in itertools.permutations(t):
                     r = 0
                 except TypeError:
                     r = -1
-                if r == result:
-                    print '%d%s((%d%s%d)%s%d) = %d' % (a,i,b,j,c,k,d,r)
+                if round1(r) == result:
+                    print '%d%s((%d%s%d)%s%d) = %d' % (a,i,b,j,c,k,d,result)
 
     # Pattern  abc??d? = (a?(b?c))?d
     for i in funcs:
@@ -112,8 +115,8 @@ for (a,b,c,d) in itertools.permutations(t):
                     r = 0
                 except TypeError:
                     r = -1
-                if r == result:
-                    print '(%d%s(%d%s%d))%s%d = %d' % (a,i,b,j,c,k,d,r)
+                if round1(r) == result:
+                    print '(%d%s(%d%s%d))%s%d = %d' % (a,i,b,j,c,k,d,result)
 
     # Pattern  abcd??? = a?(b?(c?d))
     for i in funcs:
@@ -125,5 +128,5 @@ for (a,b,c,d) in itertools.permutations(t):
                     r = 0
                 except TypeError:
                     r = -1
-                if r == result:
-                    print '%d%s((%d%s(%d%s%d)) = %d' % (a,i,b,j,c,k,d,r)
+                if round1(r) == result:
+                    print '%d%s((%d%s(%d%s%d)) = %d' % (a,i,b,j,c,k,d,result)
