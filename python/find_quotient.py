@@ -2,6 +2,7 @@
 
 from __future__ import print_function
 import sys
+import math
 
 if len(sys.argv) != 2:
     print("Usage: %s value" % (sys.argv[0]))
@@ -21,6 +22,8 @@ while (True):
     q = 1.0*a/b
     error = abs(q-v)
     if error < last_error:
-        print("%d/%d = %f  error = %f" % (a,b,q,error))
+        print("%d/%d = %f  error = %f error_log %f" % (a,b,q,error,math.log(error)))
         last_error = error
+        if error == 0:
+            exit(1)
         x = raw_input('?')
