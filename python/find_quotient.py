@@ -21,6 +21,9 @@ while (True):
         b = b+1
     q = 1.0*a/b
     error = abs(q-v)
+    if error == 0:
+        print("Exact hit: %d/%d = %f" % (a,b,q,))
+        exit(0)
     if error < last_error:
         print("%d/%d = %f  error = %f error_log %f" % (a,b,q,error,math.log(error)))
         last_error = error
