@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys
 import curses
@@ -7,7 +7,7 @@ import curses
 #print "The arguments are: " , str(sys.argv)
 
 if len(sys.argv) != 2:
-  print "Usage %s n" % sys.argv[0]
+  print("Usage %s n" % sys.argv[0])
   exit(1)
 
 i=int(sys.argv[1])

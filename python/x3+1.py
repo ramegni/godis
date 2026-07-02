@@ -1,4 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+
+# 3x+1 Collatz conjecture
 
 import sys
 #print "This is the name of the script: ", sys.argv[0]
@@ -6,19 +8,20 @@ import sys
 #print "The arguments are: " , str(sys.argv)
 
 if len(sys.argv) != 2:
-    print "Usage %s n" % sys.argv[0]
+    print("Usage %s n" % sys.argv[0])
     exit(1)
 
 def next(n):
     if n%2==1:
         n = 3*n+1
     while n%2==0:
-        n = n/2
+        n = n//2
     return n
 
 
 i=int(sys.argv[1])
 
 while i > 1:
-    print "%-10d%s" % (i, "{0:16b}".format(i))
+    #print("%-10d%s" % (i, "{0:16b}".format(i)))
+    print(f"{i:-10d}{i:16b}")
     i = next(i)
